@@ -1,6 +1,8 @@
 # Pré-requisitos
 
-Desenvolvimento feito em Python 3.7. Não há dependência de módulos Python de terceiros.
+Desenvolvimento feito em Python 3.7.
+
+Não há dependência de módulos Python de terceiros.
 
 # Descrição
 
