@@ -1,5 +1,5 @@
 import argparse
-from lattice.partition import Partition
+from lattice import Partition
 
 
 class MyVector:

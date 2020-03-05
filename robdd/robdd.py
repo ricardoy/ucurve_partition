@@ -3,6 +3,8 @@
 
 import sys
 
+from typing import List
+
 from random import choice
 
 from collections import deque, defaultdict
@@ -203,6 +205,27 @@ class Robdd:
             result.append(solution)
 
         return result
+
+
+    def evaluate(self, expression:List[int]):
+        v = self.get_root()
+
+        if v == 0:
+            return False
+        elif v == 1:
+            return True
+
+        while True:
+            i, t, f = self.items[v]
+            if expression[i] == 0:
+                v = f
+            else:
+                v = t
+
+            if v == True:
+                return True
+            elif v == False:
+                return False
 
 
     def get_index(self, idx):

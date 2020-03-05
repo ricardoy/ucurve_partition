@@ -1,5 +1,5 @@
 import argparse
-from util import partittion_to_boolean_generator
+from ucurve.partition_to_boolean import partittion_to_boolean_generator
 from ucurve.path_start import get_initial_robdd, add_restriction, remove_interval_sup, remove_interval_inf
 from robdd.synthesis import synthesize as synth
 from robdd.operators import Bdd
