@@ -1,6 +1,6 @@
 import argparse
-from ucurve.partition_to_boolean import partittion_to_boolean_generator
-from ucurve.path_start import get_initial_robdd, add_restriction, remove_interval_sup, remove_interval_inf
+from ucurve.partition_to_boolean import partition_to_boolean_generator
+from ucurve.robdd_util import get_initial_robdd, add_restriction, remove_interval_inf
 from robdd.synthesis import synthesize as synth
 from robdd.operators import Bdd
 
@@ -18,7 +18,7 @@ def get_initialized_robdd(partition_to_boolean:Dict[List[int], List[int]]):
 
 def main(number_of_items):
     partition_to_boolean = dict()
-    for p, b in partittion_to_boolean_generator(number_of_items):
+    for p, b in partition_to_boolean_generator(number_of_items):
         partition_to_boolean[p] = b
 
     print('Partitions generated.')

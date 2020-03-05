@@ -99,11 +99,11 @@ def visit(a):
 
 
 def main(n):
-    for x in partittion_to_boolean_generator(n):
+    for x in partition_to_boolean_generator(n):
         visit(x)
 
 
-def partittion_to_boolean_generator(n):
+def partition_to_boolean_generator(n):
     # algoritmo do Knuth
     a = MyVector([0] * n)
     b = MyVector([1] * n)

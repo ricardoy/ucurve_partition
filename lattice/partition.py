@@ -133,12 +133,12 @@ class Partition(object):
         return Partition(blocks=tuple(aux_blocks))
 
     def neighbors(self):
-        yield from self.generate_superset()
-        yield from self.generate_subset()
+        yield from self.superset_generator()
+        yield from self.subset_generator()
 
-    def generate_subset(self):
+    def subset_generator(self):
         if self.vc_dimension() == self.total_dimension():
-            return None
+            return
 
         # TODO criar uma estrutura de dados para quebrar blocos de uma partição
 
@@ -157,9 +157,9 @@ class Partition(object):
                 aux_blocks.pop()
                 aux_blocks.pop()
 
-    def generate_superset(self):
+    def superset_generator(self):
         if self.vc_dimension() == 1:
-            return None
+            return
 
         for i in range(self.vc_dimension()):
             for j in range(i+1, self.vc_dimension()):
