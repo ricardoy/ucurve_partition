@@ -1,1 +1,0 @@
-from ucurve.path_start import remove_interval_inf, remove_interval_sup
