@@ -20,4 +20,4 @@ def get_minimal_element(robdd:Robdd, mapping_partition_to_boolean, mapping_boole
         if not can_continue:
             break
 
-    return mapping_partition_to_boolean[partition.mask]
+    return partition.mask

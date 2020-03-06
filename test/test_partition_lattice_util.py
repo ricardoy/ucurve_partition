@@ -46,7 +46,7 @@ class TestRobddUtil(TestCase):
         mapping_boolean_to_partition[d] = pd
         mapping_boolean_to_partition[e] = pe
 
-        self.assertEqual((1, 0, 0, 0), get_minimal_element(robdd, mapping_partition_to_boolean, mapping_boolean_to_partition))
+        self.assertEqual((0, 1, 2), get_minimal_element(robdd, mapping_partition_to_boolean, mapping_boolean_to_partition))
 
     def test_get_minimal_element_should_work2(self):
         robdd = Robdd.false()
@@ -87,7 +87,7 @@ class TestRobddUtil(TestCase):
 
         minimal_element = get_minimal_element(robdd, mapping_partition_to_boolean, mapping_boolean_to_partition)
 
-        self.assertTrue(minimal_element == b or minimal_element == c or minimal_element == d)
+        self.assertTrue(minimal_element == (0, 0, 1) or minimal_element == (0, 1, 0) or minimal_element == (0, 1, 1))
 
     def test_get_minimal_element_should_return_none_if_empty(self):
         robdd = Robdd.false()
